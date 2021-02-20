@@ -23,6 +23,30 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 make
 ```
 
+
+## centos 7
+```
+yum install build-essential libboost-all-dev git cmake3 qt5-qtbase-devel boost boost-devel  -y 
+
+yum install git cmake gcc-c++ gcc glibc-static wget libstdc++-static -y
+wget https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz
+tar xzvf https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz
+cd boost_1_66_0
+./bootstrap.sh
+./b2 install
+cd ..
+
+
+git clone https://github.com/bbscoin/bbscoin.git
+git clone https://github.com/bbscoin/bbscoin-wallet.git
+cd bbscoin-wallet
+ln -s ../bbscoin/ cryptonote
+mkdir build && cd build
+cmake3 .. -DCMAKE_BUILD_TYPE=Release
+cd ..
+make
+```
+
 ## Windows
 
 Clone the bbscoin first,
